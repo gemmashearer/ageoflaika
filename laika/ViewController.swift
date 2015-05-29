@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var dogsAgeTextField: UITextField!
+    
+    @IBOutlet weak var dogsAgeLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +22,17 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
 
 
+    @IBAction func calculateAgeButton(sender: UIButton) {
+        let dogsAge = dogsAgeTextField.text.toInt()!
+        let conversionConstant = 7
+        dogsAgeTextField.resignFirstResponder()
+        dogsAgeLabel.hidden = false
+        dogsAgeLabel.text = "Your dog is " + "\(dogsAge * conversionConstant)" + " dog years old"
+    }
+    
 }
 

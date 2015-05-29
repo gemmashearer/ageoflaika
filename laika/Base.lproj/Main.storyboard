@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="laika" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,143 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Laika" translatesAutoresizingMaskIntoConstraints="NO" id="i5u-GA-i6Q">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dog's age" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uy9-3c-gl9">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your dog's age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfT-Oo-lhw">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xob-21-CvH">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlm-LO-KsQ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="15"/>
+                                <state key="normal" title="calculate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculateAgeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FyG-GD-W1i"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How old is my dog?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iL-W9-Zxz">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qlm-LO-KsQ" firstAttribute="leading" secondItem="uy9-3c-gl9" secondAttribute="leading" id="0PE-80-P35"/>
+                            <constraint firstAttribute="centerX" secondItem="uy9-3c-gl9" secondAttribute="centerX" constant="-0.5" id="1wP-hV-H8w"/>
+                            <constraint firstItem="i5u-GA-i6Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2zl-Kc-xIB"/>
+                            <constraint firstAttribute="centerY" secondItem="nfT-Oo-lhw" secondAttribute="centerY" constant="201.5" id="AVc-VU-Nhc"/>
+                            <constraint firstAttribute="centerX" secondItem="7iL-W9-Zxz" secondAttribute="centerX" id="HKE-qj-Hct">
+                                <variation key="widthClass=compact" constant="-11.5"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="nfT-Oo-lhw" secondAttribute="centerX" id="J1s-WD-hdz"/>
+                            <constraint firstItem="qlm-LO-KsQ" firstAttribute="trailing" secondItem="uy9-3c-gl9" secondAttribute="trailing" id="Od9-QE-yhs"/>
+                            <constraint firstAttribute="centerY" secondItem="Xob-21-CvH" secondAttribute="centerY" constant="98.5" id="PVg-2D-9fy">
+                                <variation key="widthClass=compact" constant="107"/>
+                            </constraint>
+                            <constraint firstItem="i5u-GA-i6Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="286" id="PyW-6n-cvs"/>
+                            <constraint firstAttribute="trailing" secondItem="i5u-GA-i6Q" secondAttribute="trailing" id="Tbg-Bx-4UH"/>
+                            <constraint firstItem="qlm-LO-KsQ" firstAttribute="top" secondItem="Xob-21-CvH" secondAttribute="bottom" constant="26" id="Y6J-Oj-Qg4">
+                                <variation key="widthClass=compact" constant="17"/>
+                            </constraint>
+                            <constraint firstAttribute="centerY" secondItem="7iL-W9-Zxz" secondAttribute="centerY" constant="243.5" id="d51-k6-e2f">
+                                <variation key="widthClass=compact" constant="239"/>
+                            </constraint>
+                            <constraint firstItem="i5u-GA-i6Q" firstAttribute="top" secondItem="qlm-LO-KsQ" secondAttribute="bottom" constant="33" id="k1N-22-5Rz">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="centerY" secondItem="uy9-3c-gl9" secondAttribute="centerY" constant="153" id="q0h-1T-EuU"/>
+                            <constraint firstItem="i5u-GA-i6Q" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="wps-DQ-r6X"/>
+                            <constraint firstAttribute="centerX" secondItem="Xob-21-CvH" secondAttribute="centerX" id="xhj-E3-vCH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="i5u-GA-i6Q"/>
+                                <exclude reference="uy9-3c-gl9"/>
+                                <exclude reference="nfT-Oo-lhw"/>
+                                <exclude reference="Xob-21-CvH"/>
+                                <exclude reference="qlm-LO-KsQ"/>
+                                <exclude reference="7iL-W9-Zxz"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="HKE-qj-Hct"/>
+                                <exclude reference="d51-k6-e2f"/>
+                                <exclude reference="AVc-VU-Nhc"/>
+                                <exclude reference="J1s-WD-hdz"/>
+                                <exclude reference="1wP-hV-H8w"/>
+                                <exclude reference="q0h-1T-EuU"/>
+                                <exclude reference="PVg-2D-9fy"/>
+                                <exclude reference="xhj-E3-vCH"/>
+                                <exclude reference="0PE-80-P35"/>
+                                <exclude reference="Od9-QE-yhs"/>
+                                <exclude reference="Y6J-Oj-Qg4"/>
+                                <exclude reference="2zl-Kc-xIB"/>
+                                <exclude reference="PyW-6n-cvs"/>
+                                <exclude reference="Tbg-Bx-4UH"/>
+                                <exclude reference="k1N-22-5Rz"/>
+                                <exclude reference="wps-DQ-r6X"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="i5u-GA-i6Q"/>
+                                <include reference="uy9-3c-gl9"/>
+                                <include reference="nfT-Oo-lhw"/>
+                                <include reference="Xob-21-CvH"/>
+                                <include reference="qlm-LO-KsQ"/>
+                                <include reference="7iL-W9-Zxz"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="HKE-qj-Hct"/>
+                                <include reference="d51-k6-e2f"/>
+                                <include reference="AVc-VU-Nhc"/>
+                                <include reference="J1s-WD-hdz"/>
+                                <include reference="1wP-hV-H8w"/>
+                                <include reference="q0h-1T-EuU"/>
+                                <include reference="PVg-2D-9fy"/>
+                                <include reference="xhj-E3-vCH"/>
+                                <include reference="0PE-80-P35"/>
+                                <include reference="Od9-QE-yhs"/>
+                                <include reference="Y6J-Oj-Qg4"/>
+                                <include reference="2zl-Kc-xIB"/>
+                                <include reference="PyW-6n-cvs"/>
+                                <include reference="Tbg-Bx-4UH"/>
+                                <include reference="k1N-22-5Rz"/>
+                                <include reference="wps-DQ-r6X"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="dogsAgeLabel" destination="Xob-21-CvH" id="mWR-DR-HPo"/>
+                        <outlet property="dogsAgeTextField" destination="uy9-3c-gl9" id="oaV-L0-zPH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="369" y="338"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Laika" width="528" height="327"/>
+    </resources>
 </document>
