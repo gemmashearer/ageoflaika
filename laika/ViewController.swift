@@ -34,5 +34,19 @@ class ViewController: UIViewController {
         dogsAgeLabel.text = "Your dog is " + "\(dogsAge * conversionConstant)" + " dog years old"
     }
     
+    
+    @IBAction func calculateScientificAge(sender: UIButton) {
+        let dogsScientificAge = dogsAgeTextField.text.toInt()!
+        let youngConversionConstant = 10.5
+        let oldConversionConstant = 4
+        dogsAgeTextField.resignFirstResponder()
+        dogsAgeLabel.hidden = false
+        if dogsScientificAge <= 2 {
+            dogsAgeLabel.text = "Your dog is " + "\(Double(dogsScientificAge) * youngConversionConstant)" + " dog years old"
+        } else {
+            dogsAgeLabel.text = "Your dog is " + "\(dogsScientificAge * oldConversionConstant)" + " dog years old"
+        }
+    }
+    
 }
 
