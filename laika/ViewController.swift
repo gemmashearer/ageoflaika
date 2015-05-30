@@ -36,26 +36,22 @@ class ViewController: UIViewController {
     
     
     @IBAction func calculateScientificAge(sender: UIButton) {
-        let dogsScientificAge = dogsAgeTextField.text.toInt()!
-        let youngConversionConstant = 10.5
-        let oldConversionConstant = 4
-        dogsAgeTextField.resignFirstResponder()
-        dogsAgeLabel.hidden = false
-        if dogsScientificAge <= 2 {
-            dogsAgeLabel.text = "Your dog is " + "\(Double(dogsScientificAge) * youngConversionConstant)" + " dog years old"
-        } else {
-            let dogsScientificAge = dogsAgeTextField.text.toInt()!
-            let yearsMoreThanTwo = dogsScientificAge - 2
-           // dogsAgeLabel.text = "\(yearsMoreThanTwo)"
-            var oldAge = yearsMoreThanTwo * oldConversionConstant
-            var youngAge = Double(2 * youngConversionConstant)
-            dogsAgeLabel.text = "\(Double(oldAge) + youngAge)"
-            
-           // dogsAgeLabel.text = "\((yearsMoreThanTwo * oldConversionConstant) + Double((2 * youngConversionConstant)))"
-            
-            
-            //dogsAgeLabel.text = "Your dog is " + "\((yearsOlderThan2 * oldConversionConstant) + 2 * youngConversionConstant)" + " dog years old"
+        //make the value from the text field a string
+        let stringFromTextField = dogsAgeTextField.text
+        //convert the string to a double
+        let doubleFromTextField = Double((stringFromTextField as NSString).doubleValue)
+        // make this the dog years
+        var realDogYears:Double
+        // if else statement: the if bit works out the dog age for the older dogs - multiply the first 2 years by 10 then the remaining years by 4
+        if doubleFromTextField > 2 {
+            realDogYears = (10.5 * 2) + (doubleFromTextField - 2) * 4
+        } else { //calculates the age of the younger dogs
+            realDogYears = doubleFromTextField * 10.5
         }
+        //makes the labels show the age
+        dogsAgeLabel.hidden = false
+        dogsAgeLabel.text = "Your dog is " + "\(realDogYears)" + " dog years old"
+        
     }
     
 }
